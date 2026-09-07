@@ -1,0 +1,42 @@
+# Включаем движок перезаписи
+RewriteEngine On
+
+# Базовый путь (корень сайта)
+RewriteBase /
+
+# Если это реальный файл (css, js, изображения) или папка - пропускаем
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Все остальные запросы отправляем на index.php
+RewriteRule ^ index.php [QSA,L]
+
+# Защита от просмотра папок
+Options -Indexes
+
+# Защита важных файлов
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+<FilesMatch "\.(log|txt|ini|conf)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+<Files "bot_page.php">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "real_page.php">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Скрываем версию сервера
+ServerSignature Off

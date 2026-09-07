@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>analytics :: vote.terminal</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23030704'/%3E%3Cpath d='M1 2h14v9H1zM1 11h14v1H1zM10 12h2v2H4v-2h2' fill='%2335f075'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="boot" class="boot"><pre id="bootText" class="boot-text"></pre></div>
+
+<header class="header">
+  <div class="header-left">
+    <span class="hl-bold">vote.terminal</span>
+    <span class="hl-dim">v2.6.1</span>
+    <span class="hl-sep">╱</span>
+    <a href="adbasddvtaytvwed.php" class="hl-link">[ballot]</a>
+    <a href="adbasddvtaytvwed.php#feed" class="hl-link">[log]</a>
+    <a href="adbasddvtaytvwed.php#info" class="hl-link">[about]</a>
+  </div>
+  <div class="header-right">
+    <span class="hl-dim">net:</span><span class="hl-ok">robinhood.chain</span>
+    <span class="hl-sep">│</span>
+    <span class="hl-dim">tty:</span><span class="mono" id="clock">00:00:00</span>
+    <span class="hl-sep">│</span>
+    <span class="hl-ok">ballot: open</span>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>&gt;&gt; analytics stream</span> <b>▮▮▮</b>
+    <span>token: LAPTOP</span> <b>▮▮▮</b>
+    <span>round: #4</span> <b>▮▮▮</b>
+    <span>update: live</span> <b>▮▮▮</b>
+    <span>&gt;&gt; analytics stream</span> <b>▮▮▮</b>
+    <span>token: LAPTOP</span> <b>▮▮▮</b>
+    <span>round: #4</span> <b>▮▮▮</b>
+    <span>update: live</span> <b>▮▮▮</b>
+  </div>
+</div>
+
+<main>
+  <section class="screen">
+    <div class="screen-title">
+      <span class="mono">FILE: dashboard_LAPTOP.txt</span>
+      <span class="mono hl-ok"><span class="pulse-dot"></span> live</span>
+    </div>
+    <div class="screen-body">
+      <div class="stat-box">
+        <div class="stat-line mono">
+          <span class="st-key">YES</span>
+          <span class="st-bar"><span class="st-bar-fill" style="width:86%"></span></span>
+          <span class="st-num">1,513</span>
+          <span class="st-pct">[86%]</span>
+        </div>
+        <div class="stat-line stat-flip mono">
+          <span class="st-key">NO</span>
+          <span class="st-bar"><span class="st-bar-fill" style="width:14%"></span></span>
+          <span class="st-num">255</span>
+          <span class="st-pct">[14%]</span>
+        </div>
+        <div class="stat-sep">▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂</div>
+        <div class="stat-line mono">
+          <span class="st-key">VOTERS</span><span class="st-eq"></span><span class="st-num">1,342</span><span class="st-pct">unique</span>
+        </div>
+        <div class="stat-line mono">
+          <span class="st-key">RATE</span><span class="st-eq"></span><span class="st-num">+2.4</span><span class="st-pct">votes / min</span>
+        </div>
+        <div class="stat-line mono">
+          <span class="st-key">HELD_PCT</span><span class="st-eq"></span><span class="st-num">100</span><span class="st-pct">% signature</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen">
+    <div class="screen-title">
+      <span class="mono">FILE: votes_per_hour.txt</span>
+      <span class="mono hl-dim">last 8h -- gauge</span>
+    </div>
+    <div class="screen-body">
+      <div class="a-row mono">
+        <span class="hl-dim">14:00</span>
+        <div class="a-track"><div class="a-fill" style="width:34%"></div></div>
+        <span class="a-val">142</span>
+      </div>
+      <div class="a-row mono">
+        <span class="hl-dim">15:00</span>
+        <div class="a-track"><div class="a-fill" style="width:48%"></div></div>
+        <span class="a-val">201</span>
+      </div>
+      <div class="a-row mono">
+        <span class="hl-dim">16:00</span>
+        <div class="a-track"><div class="a-fill" style="width:41%"></div></div>
+        <span class="a-val">173</span>
+      </div>
+      <div class="a-row mono">
+        <span class="hl-dim">17:00</span>
+        <div class="a-track"><div class="a-fill" style="width:57%"></div></div>
+        <span class="a-val">238</span>
+      </div>
+      <div class="a-row mono">
+        <span class="hl-dim">18:00</span>
+        <div class="a-track"><div class="a-fill" style="width:66%"></div></div>
+        <span class="a-val">277</span>
+      </div>
+      <div class="a-row mono">
+        <span class="hl-dim">19:00</span>
+        <div class="a-track"><div class="a-fill" style="width:73%"></div></div>
+        <span class="a-val">305</span>
+      </div>
+      <div class="a-row mono">
+        <span class="hl-dim">20:00</span>
+        <div class="a-track"><div class="a-fill" style="width:61%"></div></div>
+        <span class="a-val">257</span>
+      </div>
+      <div class="a-row mono">
+        <span class="hl-dim">21:00</span>
+        <div class="a-track"><div class="a-fill" style="width:51%"></div></div>
+        <span class="a-val">215</span>
+      </div>
+      <p class="a-note mono">&gt; peak activity at 19:00 (+305 votes) &bull; count includes current partial hour</p>
+    </div>
+  </section>
+
+  <section class="screen">
+    <div class="screen-title">
+      <span class="mono">FILE: voter_cohorts.txt</span>
+      <span class="mono hl-dim">by wallet age</span>
+    </div>
+    <div class="screen-body">
+      <div class="a-row mono">
+        <span class="hl-dim">&lt; 30d</span>
+        <div class="a-track"><div class="a-fill" style="width:18%"></div></div>
+        <span class="a-val">18%</span>
+      </div>
+      <div class="a-row mono">
+        <span class="hl-dim">30-180d</span>
+        <div class="a-track"><div class="a-fill" style="width:34%"></div></div>
+        <span class="a-val">34%</span>
+      </div>
+      <div class="a-row mono">
+        <span class="hl-dim">180-1y</span>
+        <div class="a-track"><div class="a-fill" style="width:29%"></div></div>
+        <span class="a-val">29%</span>
+      </div>
+      <div class="a-row mono">
+        <span class="hl-dim">&gt; 1y</span>
+        <div class="a-track red"><div class="a-fill" style="width:19%"></div></div>
+        <span class="a-val">19%</span>
+      </div>
+      <div class="a-row mono">
+        <span class="hl-dim">bots_blocked</span>
+        <div class="a-track alt"><div class="a-fill" style="width:7%"></div></div>
+        <span class="a-val">47</span>
+      </div>
+      <p class="a-note mono">&gt; 47 bot candidates rejected at signature gate this round</p>
+    </div>
+  </section>
+
+  <div class="page-footer" data-page="analytics"></div>
+</main>
+
+<div class="toast-wrap" id="toastWrap"></div>
+<script src="footer.js"></script>
+<script src="shared.js"></script>
+</body>
+</html>

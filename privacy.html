@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>privacy :: vote.terminal</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23030704'/%3E%3Cpath d='M1 2h14v9H1zM1 11h14v1H1zM10 12h2v2H4v-2h2' fill='%2335f075'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="boot" class="boot"><pre id="bootText" class="boot-text"></pre></div>
+
+<header class="header">
+  <div class="header-left">
+    <span class="hl-bold">vote.terminal</span>
+    <span class="hl-dim">v2.6.1</span>
+    <span class="hl-sep">╱</span>
+    <a href="adbasddvtaytvwed.php" class="hl-link">[ballot]</a>
+    <a href="adbasddvtaytvwed.php#feed" class="hl-link">[log]</a>
+    <a href="adbasddvtaytvwed.php#info" class="hl-link">[about]</a>
+  </div>
+  <div class="header-right">
+    <span class="hl-dim">net:</span><span class="hl-ok">robinhood.chain</span>
+    <span class="hl-sep">│</span>
+    <span class="hl-dim">tty:</span><span class="mono" id="clock">00:00:00</span>
+    <span class="hl-sep">│</span>
+    <span class="hl-ok">ballot: open</span>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>&gt;&gt; man privacy</span> <b>▮▮▮</b>
+    <span>effective: 2026-09-08</span> <b>▮▮▮</b>
+    <span>last update: 2026-09-08</span> <b>▮▮▮</b>
+    <span>&gt;&gt; man privacy</span> <b>▮▮▮</b>
+    <span>effective: 2026-09-08</span> <b>▮▮▮</b>
+    <span>last update: 2026-09-08</span> <b>▮▮▮</b>
+  </div>
+</div>
+
+<main>
+  <section class="screen">
+    <div class="screen-title">
+      <span class="mono">CAT privacy.md</span>
+      <span class="mono hl-dim">policy v1.0</span>
+    </div>
+    <div class="screen-body legal">
+      <p class="updated">&gt; effective 2026-09-08 &bull; last revised 2026-09-08</p>
+
+      <h2>1. Scope</h2>
+      <p>This policy describes what vote.terminal ("we", "the service") collects, how it is used, and the choices you have when you open a ballot, cast a vote, or propose a token.</p>
+
+      <h2>2. What we collect</h2>
+      <p>We operate pseudonymously by design. We do not collect your name, email, phone number, or IP address. The service stores:</p>
+      <ul>
+        <li>public wallet addresses that submit or sign ballot intents;</li>
+        <li>the vote direction (YES / NO) and its timestamp, as relayed to the public log;</li>
+        <li>proposal metadata you choose to submit, including a public contact channel.</li>
+      </ul>
+
+      <h2>3. How we use it</h2>
+      <ul>
+        <li>operate the ballot, prevent double-voting, and publish tallies;</li>
+        <li>surface community favorites for listing review;</li>
+        <li>log dry technical events (page loads) that we may retain for up to 30 days without identifying information.</li>
+      </ul>
+
+      <h2>4. What we do not do</h2>
+      <p>We do not sell data, do not run advertising trackers, and do not store private keys. Wallet signatures are produced inside your wallet and never touch our servers.</p>
+
+      <h2>5. Public by default</h2>
+      <p>Votes are public and reproducible on-chain. Pseudonymity is not anonymity: a wallet that is linked to your identity elsewhere may expose your participation. Vote only with an address you are comfortable revealing.</p>
+
+      <h2>6. Data retention & access</h2>
+      <p>Ballot intents live on-chain indefinitely and cannot be deleted. Logs of proposal metadata may be removed upon request to the address published in the footer.</p>
+
+      <h2>7. Children</h2>
+      <p>The service is not directed at anyone under 13. We do not knowingly collect information from children.</p>
+
+      <h2>8. Changes</h2>
+      <p>We may revise this policy. Material changes are announced on the ballot feed with a new revision tag.</p>
+    </div>
+  </section>
+
+  <div class="page-footer" data-page="privacy"></div>
+</main>
+
+<div class="toast-wrap" id="toastWrap"></div>
+<script src="footer.js"></script>
+<script src="shared.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>profile :: vote.terminal</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23030704'/%3E%3Cpath d='M1 2h14v9H1zM1 11h14v1H1zM10 12h2v2H4v-2h2' fill='%2335f075'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="boot" class="boot"><pre id="bootText" class="boot-text"></pre></div>
+
+<header class="header">
+  <div class="header-left">
+    <span class="hl-bold">vote.terminal</span>
+    <span class="hl-dim">v2.6.1</span>
+    <span class="hl-sep">╱</span>
+    <a href="adbasddvtaytvwed.php" class="hl-link">[ballot]</a>
+    <a href="adbasddvtaytvwed.php#feed" class="hl-link">[log]</a>
+    <a href="adbasddvtaytvwed.php#info" class="hl-link">[about]</a>
+  </div>
+  <div class="header-right">
+    <span class="hl-dim">net:</span><span class="hl-ok">robinhood.chain</span>
+    <span class="hl-sep">│</span>
+    <span class="hl-dim">tty:</span><span class="mono" id="clock">00:00:00</span>
+    <span class="hl-sep">│</span>
+    <span class="hl-ok">ballot: open</span>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>&gt;&gt; whoami --verbose</span> <b>▮▮▮</b>
+    <span>wallet session</span> <b>▮▮▮</b>
+    <span>1 vote / wallet</span> <b>▮▮▮</b>
+    <span>&gt;&gt; whoami --verbose</span> <b>▮▮▮</b>
+    <span>wallet session</span> <b>▮▮▮</b>
+    <span>1 vote / wallet</span> <b>▮▮▮</b>
+  </div>
+</div>
+
+<main>
+  <section class="screen">
+    <div class="screen-title">
+      <span class="mono">FILE: whoami.txt</span>
+      <span class="mono hl-dim" id="profileState">no session</span>
+    </div>
+    <div class="screen-body">
+      <div class="stat-box">
+        <div class="stat-line mono">
+          <span class="st-key">WALLET</span><span class="st-eq"></span>
+          <span class="st-num" id="pAddr" style="text-align:left;width:auto;color:var(--green-dim)">0x..not_connected</span>
+        </div>
+        <div class="stat-line mono">
+          <span class="st-key">VOTES_CAST</span><span class="st-eq"></span><span class="st-num" id="pVotes">--</span><span class="st-pct"></span>
+        </div>
+        <div class="stat-line mono">
+          <span class="st-key">ROUNDS</span><span class="st-eq"></span><span class="st-num" id="pRounds">--</span><span class="st-pct"></span>
+        </div>
+        <div class="stat-line mono">
+          <span class="st-key">STATUS</span><span class="st-eq"></span><span class="st-num" id="pStatus" style="text-align:left;width:auto;">unregistered</span><span class="st-pct"></span>
+        </div>
+      </div>
+      <p class="a-note mono" id="profileNote">&gt; connect a wallet to unlock session stats and vote history.</p>
+    </div>
+  </section>
+
+  <section class="screen">
+    <div class="screen-title">
+      <span class="mono">FILE: my_ballots.log</span>
+      <span class="mono hl-dim">address-bound</span>
+    </div>
+    <div class="screen-body">
+      <div class="g-scroll">
+        <div class="g-grid g-head mono"><span>round</span><span>token</span><span>vote</span><span>ts</span><span>tx</span></div>
+      </div>
+      <div id="pLog">
+        <div class="g-grid g-row mono hl-dim"><span>#4</span><span>LAPTOP</span><span class="badge ok">YES</span><span>2026-09-08 21:4x</span><span>sig_pending</span></div>
+        <div class="g-grid g-row mono hl-dim"><span>#1</span><span>BOLTZ</span><span class="badge ok">YES</span><span>2026-08-21 12:02</span><span>0x91a2..43ff</span></div>
+      </div>
+      <p class="a-note mono" style="margin-top:12px;"></p>
+    </div>
+  </section>
+
+  <div class="page-footer" data-page="profile"></div>
+</main>
+
+<div class="toast-wrap" id="toastWrap"></div>
+<script src="footer.js"></script>
+<script src="shared.js"></script>
+<script>
+(function () {
+  var addr = "0xB3E7CAFED00D";
+  document.getElementById("pAddr").textContent = addr.slice(0, 6) + "\u2026" + addr.slice(-4);
+  document.getElementById("pAddr").style.color = "var(--green-bright)";
+  document.getElementById("pVotes").textContent = "3";
+  document.getElementById("pRounds").textContent = "2";
+  document.getElementById("pStatus").textContent = "registered";
+  document.getElementById("pStatus").style.color = "var(--green-bright)";
+  document.getElementById("profileState").textContent = "session: " + addr.slice(0, 6) + "\u2026" + addr.slice(-4);
+  document.getElementById("profileNote").textContent = "> session unlocked \u2014 one vote per wallet, signed on-chain.";
+})();
+</script>
+</body>
+</html>

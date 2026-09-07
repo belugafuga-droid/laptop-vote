@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>docs :: vote.terminal</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23030704'/%3E%3Cpath d='M1 2h14v9H1zM1 11h14v1H1zM10 12h2v2H4v-2h2' fill='%2335f075'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="boot" class="boot"><pre id="bootText" class="boot-text"></pre></div>
+
+<header class="header">
+  <div class="header-left">
+    <span class="hl-bold">vote.terminal</span>
+    <span class="hl-dim">v2.6.1</span>
+    <span class="hl-sep">╱</span>
+    <a href="adbasddvtaytvwed.php" class="hl-link">[ballot]</a>
+    <a href="adbasddvtaytvwed.php#feed" class="hl-link">[log]</a>
+    <a href="adbasddvtaytvwed.php#info" class="hl-link">[about]</a>
+  </div>
+  <div class="header-right">
+    <span class="hl-dim">net:</span><span class="hl-ok">robinhood.chain</span>
+    <span class="hl-sep">│</span>
+    <span class="hl-dim">tty:</span><span class="mono" id="clock">00:00:00</span>
+    <span class="hl-sep">│</span>
+    <span class="hl-ok">ballot: open</span>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>&gt;&gt; man vote.terminal</span> <b>▮▮▮</b>
+    <span>docs / manual</span> <b>▮▮▮</b>
+    <span>sections: overview voting create legal</span> <b>▮▮▮</b>
+    <span>&gt;&gt; man vote.terminal</span> <b>▮▮▮</b>
+    <span>docs / manual</span> <b>▮▮▮</b>
+    <span>sections: overview voting create legal</span> <b>▮▮▮</b>
+  </div>
+</div>
+
+<main>
+  <section class="screen">
+    <div class="screen-title">
+      <span class="mono">MAN 1 OVERVIEW</span>
+      <span class="mono hl-dim">vote.terminal(1)</span>
+    </div>
+    <div class="screen-body legal">
+      <div class="pre-code">SYNOPSIS
+    vote.terminal --token $LAPTOP
+
+DESCRIPTION
+    vote.terminal is a community ballot shell for fixed-supply tokens on
+    robinhood.chain. Each round opens a 72h voting window during which any
+    wallet may cast exactly one signed vote. The candidate with the highest
+    support enters the listing review queue for the following round.
+
+    The system does not custody assets. Your wallet submits every
+    transaction; vote.terminal only relays signed intents.</div>
+    </div>
+  </section>
+
+  <section class="screen">
+    <div class="screen-title">
+      <span class="mono">MAN 2 VOTING</span>
+      <span class="mono hl-dim">life of a ballot</span>
+    </div>
+    <div class="screen-body legal">
+      <ol style="list-style:decimal inside; color:var(--green-dim); font-size:14px; display:grid; gap:8px;">
+        <li><b class="hl-ok">PROPOSAL</b> — a token is submitted via <a href="create.html">create</a> and passes signature review.</li>
+        <li><b class="hl-ok">BALLOT</b> — the candidate appears in <a href="explore.html">explore</a> with a live tally.</li>
+        <li><b class="hl-ok">VOTE</b> — open the ballot and press YES or NO to signal support.</li>
+        <li><b class="hl-ok">TALLY</b> — votes are counted in real time; support % drives the ranking.</li>
+        <li><b class="hl-ok">RESULT</b> — top candidates advance to listing review at round close.</li>
+      </ol>
+      <div class="pre-code" style="margin-top:14px;">   # cast a vote from the ballot page
+   &gt; vote.sh --token LAPTOP --yes
+   ballot recorded :: $LAPTOP YES</div>
+    </div>
+  </section>
+
+  <section class="screen">
+    <div class="screen-title">
+      <span class="mono">MAN 3 CREATING</span>
+      <span class="mono hl-dim">requirements</span>
+    </div>
+    <div class="screen-body legal">
+      <ul>
+        <li>fixed token supply declared at creation</li>
+        <li>a deployer address that can prove ownership on-chain</li>
+        <li>no free-mint or upgradeable backdoors flagged by review</li>
+        <li>contact channel (tg / x) for the review queue</li>
+      </ul>
+      <p style="margin-top:10px;">Submissions are queued in <a href="create.html">create</a> and verified before the next ballot opens.</p>
+    </div>
+  </section>
+
+  <section class="screen">
+    <div class="screen-title">
+      <span class="mono">MAN 4 FAQ</span>
+      <span class="mono hl-dim">frequently asked</span>
+    </div>
+    <div class="screen-body">
+      <details class="faq">
+        <summary>Do I pay gas to vote?</summary>
+        <p>In this demo, no. On a live deployment the vote signature is submitted through your wallet and network fees may apply.</p>
+      </details>
+      <details class="faq">
+        <summary>Can I change my vote?</summary>
+        <p>No — one address, one irreversible ballot per round. Keep it deliberate.</p>
+      </details>
+      <details class="faq">
+        <summary>Is voting anonymous?</summary>
+        <p>Vote intents are pseudonymous: they appear as hashed addresses in the public log. Your IP is never stored.</p>
+      </details>
+      <details class="faq">
+        <summary>What decides the winner?</summary>
+        <p>Support percentage (yes / total). Thresholds are published per round; ties resolve by early arrival.</p>
+      </details>
+      <details class="faq">
+        <summary>Does listing guarantee value?</summary>
+        <p>No. Listing is community curation only. Please read the <a href="risk_notice.html">risk notice</a>.</p>
+      </details>
+    </div>
+  </section>
+
+  <div class="page-footer" data-page="docs"></div>
+</main>
+
+<div class="toast-wrap" id="toastWrap"></div>
+<script src="footer.js"></script>
+<script src="shared.js"></script>
+</body>
+</html>

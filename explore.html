@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>explore :: vote.terminal</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23030704'/%3E%3Cpath d='M1 2h14v9H1zM1 11h14v1H1zM10 12h2v2H4v-2h2' fill='%2335f075'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="boot" class="boot"><pre id="bootText" class="boot-text"></pre></div>
+
+<header class="header">
+  <div class="header-left">
+    <span class="hl-bold">vote.terminal</span>
+    <span class="hl-dim">v2.6.1</span>
+    <span class="hl-sep">╱</span>
+    <a href="adbasddvtaytvwed.php" class="hl-link">[ballot]</a>
+    <a href="adbasddvtaytvwed.php#feed" class="hl-link">[log]</a>
+    <a href="adbasddvtaytvwed.php#info" class="hl-link">[about]</a>
+  </div>
+  <div class="header-right">
+    <span class="hl-dim">net:</span><span class="hl-ok">robinhood.chain</span>
+    <span class="hl-sep">│</span>
+    <span class="hl-dim">tty:</span><span class="mono" id="clock">00:00:00</span>
+    <span class="hl-sep">│</span>
+    <span class="hl-ok">ballot: open</span>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>&gt;&gt; launchpad directory</span> <b>▮▮▮</b>
+    <span>12 candidacies</span> <b>▮▮▮</b>
+    <span>1 round active</span> <b>▮▮▮</b>
+    <span>sort: support</span> <b>▮▮▮</b>
+    <span>&gt;&gt; launchpad directory</span> <b>▮▮▮</b>
+    <span>12 candidacies</span> <b>▮▮▮</b>
+    <span>1 round active</span> <b>▮▮▮</b>
+    <span>sort: support</span> <b>▮▮▮</b>
+  </div>
+</div>
+
+<main>
+  <section class="screen">
+    <div class="screen-title">
+      <span class="mono">FILE: ls_launchpad.txt</span>
+      <span class="mono hl-dim">--all --sort=support</span>
+    </div>
+    <div class="screen-body">
+      <p class="page-intro mono">&gt; 12 candidacies on <b class="hl-ok">robinhood.chain</b> &bull; current round: <b>#4</b> &bull; 1,768 votes cast</p>
+
+      <div class="g-scroll">
+        <div class="g-grid g-head mono">
+          <span>name</span><span>symbol</span><span>chain</span><span>support</span><span>votes</span><span>status</span>
+        </div>
+        <div class="g-grid g-row mono">
+          <span><a href="adbasddvtaytvwed.php" class="hl-ok">LAPTOP</a></span><span>$LAPTOP</span><span>robinhood</span><span>86%</span><span>1,768</span><span class="badge ok">LISTING_QUEUE</span>
+        </div>
+        <div class="g-grid g-row mono">
+          <span>NUCLEUS</span><span>$NUC</span><span>robinhood</span><span>79%</span><span>1,021</span><span class="badge amber">VOTING</span>
+        </div>
+        <div class="g-grid g-row mono">
+          <span>PAPERPLANE</span><span>$PLANE</span><span>robinhood</span><span>71%</span><span>864</span><span class="badge amber">VOTING</span>
+        </div>
+        <div class="g-grid g-row mono">
+          <span>GRAVY</span><span>$GRVY</span><span>robinhood</span><span>63%</span><span>612</span><span class="badge amber">VOTING</span>
+        </div>
+        <div class="g-grid g-row mono">
+          <span>NOMAD</span><span>$NMD</span><span>robinhood</span><span>58%</span><span>441</span><span class="badge amber">VOTING</span>
+        </div>
+        <div class="g-grid g-row mono">
+          <span>KEYTAR</span><span>$KYT</span><span>robinhood</span><span>49%</span><span>389</span><span class="badge red">REVIEW</span>
+        </div>
+        <div class="g-grid g-row mono">
+          <span>TETRA</span><span>$TTR</span><span>robinhood</span><span>37%</span><span>203</span><span class="badge dim">PASSED_ROUND3</span>
+        </div>
+        <div class="g-grid g-row mono">
+          <span>BOLTZ</span><span>$BLTZ</span><span>robinhood</span><span>81%</span><span>974</span><span class="badge ok">LISTED</span>
+        </div>
+        <div class="g-grid g-row mono">
+          <span>FIGMENT</span><span>$FIG</span><span>robinhood</span><span>76%</span><span>733</span><span class="badge ok">LISTED</span>
+        </div>
+        <div class="g-grid g-row mono">
+          <span>MORSE</span><span>$MRS</span><span>robinhood</span><span>22%</span><span>98</span><span class="badge red">FAILED_ROUND3</span>
+        </div>
+      </div>
+
+      <p class="a-note mono" style="margin-top:14px;">
+        &gt; tap on a name to open its ballot &bull; <span class="hl-amber">round timeline:</span> 72h vote window &rarr; 12h review &rarr; listing
+      </p>
+    </div>
+  </section>
+
+  <section class="screen footer">
+    <div class="screen-body">
+      <div class="f-cols">
+        <div class="f-col">
+          <h4 class="mono">// product</h4>
+          <a href="explore.html" class="hl-dim">[explore]</a>
+          <a href="analytics.html">[analytics]</a>
+          <a href="create.html">[create]</a>
+          <a href="profile.html">[profile]</a>
+          <a href="docs.html">[docs]</a>
+        </div>
+        <div class="f-col">
+          <h4 class="mono">// legal</h4>
+          <a href="privacy.html">[privacy]</a>
+          <a href="terms.html">[terms]</a>
+          <a href="risk_notice.html">[risk_notice]</a>
+        </div>
+      </div>
+      <div class="risk mono">
+        <span class="hl-amber">!!</span> RISK NOTICE: transactions are submitted through your wallet and may be irreversible.
+        tokens can be volatile or lose all value. vote is informational &bull; not financial advice.
+      </div>
+      <div class="f-bottom mono">
+        <span>© 2026 vote.terminal</span>
+        <span>sig: LAPTOP_0x76Ed &bull; est. on-chain</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="toast-wrap" id="toastWrap"></div>
+<script src="shared.js"></script>
+</body>
+</html>

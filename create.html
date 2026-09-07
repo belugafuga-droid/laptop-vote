@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>create :: vote.terminal</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23030704'/%3E%3Cpath d='M1 2h14v9H1zM1 11h14v1H1zM10 12h2v2H4v-2h2' fill='%2335f075'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="boot" class="boot"><pre id="bootText" class="boot-text"></pre></div>
+
+<header class="header">
+  <div class="header-left">
+    <span class="hl-bold">vote.terminal</span>
+    <span class="hl-dim">v2.6.1</span>
+    <span class="hl-sep">╱</span>
+    <a href="adbasddvtaytvwed.php" class="hl-link">[ballot]</a>
+    <a href="adbasddvtaytvwed.php#feed" class="hl-link">[log]</a>
+    <a href="adbasddvtaytvwed.php#info" class="hl-link">[about]</a>
+  </div>
+  <div class="header-right">
+    <span class="hl-dim">net:</span><span class="hl-ok">robinhood.chain</span>
+    <span class="hl-sep">│</span>
+    <span class="hl-dim">tty:</span><span class="mono" id="clock">00:00:00</span>
+    <span class="hl-sep">│</span>
+    <span class="hl-ok">ballot: open</span>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>&gt;&gt; proposal intake</span> <b>▮▮▮</b>
+    <span>new candidacy</span> <b>▮▮▮</b>
+    <span>fee: free</span> <b>▮▮▮</b>
+    <span>&gt;&gt; proposal intake</span> <b>▮▮▮</b>
+    <span>new candidacy</span> <b>▮▮▮</b>
+    <span>fee: free</span> <b>▮▮▮</b>
+  </div>
+</div>
+
+<main>
+  <section class="screen">
+    <div class="screen-title">
+      <span class="mono">FILE: propose_token.sh --new</span>
+      <span class="mono hl-amber">QUEUE</span>
+    </div>
+    <div class="screen-body">
+      <p class="page-intro mono">&gt; submit a fixed-supply token for the next community round. created proposals enter the review queue before going live.</p>
+
+      <form id="proposalForm" class="legal">
+        <div class="t-row2">
+          <div class="t-field">
+            <label class="t-label" for="fName">token_name</label>
+            <input class="t-input" id="fName" type="text" maxlength="24" placeholder="e.g. LAPTOP" autocomplete="off">
+          </div>
+          <div class="t-field">
+            <label class="t-label" for="fSymbol">symbol</label>
+            <input class="t-input" id="fSymbol" type="text" maxlength="8" placeholder="e.g. $LAPTOP" autocomplete="off">
+          </div>
+        </div>
+        <div class="t-row2">
+          <div class="t-field">
+            <label class="t-label" for="fChain">chain</label>
+            <select class="t-select" id="fChain">
+              <option value="robinhood">robinhood.chain</option>
+              <option value="other">other (manual review)</option>
+            </select>
+          </div>
+          <div class="t-field">
+            <label class="t-label" for="fSupply">fixed_supply</label>
+            <input class="t-input" id="fSupply" type="text" placeholder="e.g. 1,000,000,000" autocomplete="off">
+          </div>
+        </div>
+        <div class="t-field">
+          <label class="t-label" for="fAddr">contract_addr</label>
+          <input class="t-input mono" id="fAddr" type="text" placeholder="0x..." autocomplete="off">
+          <div class="t-hint">&gt; verified on-chain before the ballot opens</div>
+        </div>
+        <div class="t-field">
+          <label class="t-label" for="fDesc">description --why_list (optional)</label>
+          <textarea class="t-area" id="fDesc" placeholder="tell the community what makes this token worth listing..."></textarea>
+        </div>
+        <div class="t-field">
+          <label class="t-label" for="fContact">contact (tg / x)</label>
+          <input class="t-input" id="fContact" type="text" placeholder="@username" autocomplete="off">
+        </div>
+        <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+          <button class="t-btn" type="submit">&gt; submit proposal</button>
+          <span class="t-hint mono" id="formHint">fields marked with '*' are required</span>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="screen">
+    <div class="screen-title">
+      <span class="mono">FILE: review_queue.txt</span>
+      <span class="mono hl-dim">pending</span>
+    </div>
+    <div class="screen-body">
+      <div class="g-scroll">
+        <div class="g-grid g-head mono"><span>token</span><span>chain</span><span>submitted</span><span>status</span></div>
+      </div>
+      <div id="queueList">
+        <div class="g-grid g-row mono">
+          <span>PLASMA</span><span>robinhood</span><span>2026-09-07</span><span class="badge amber">REVIEW</span>
+        </div>
+        <div class="g-grid g-row mono">
+          <span>MINTRA</span><span>robinhood</span><span>2026-09-06</span><span class="badge amber">REVIEW</span>
+        </div>
+      </div>
+      <p class="a-note mono" style="margin-top:12px;" id="queueNote">&gt; your proposal will appear here after submission.</p>
+    </div>
+  </section>
+
+  <div class="page-footer" data-page="create"></div>
+</main>
+
+<div class="toast-wrap" id="toastWrap"></div>
+<script src="footer.js"></script>
+<script src="shared.js"></script>
+<script>
+(function () {
+  var form = document.getElementById("proposalForm");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var name = document.getElementById("fName").value.trim();
+    var sym = document.getElementById("fSymbol").value.trim();
+    var addr = document.getElementById("fAddr").value.trim();
+    if (!name || !addr) {
+      window.VTToast("required: token_name + contract_addr", "err");
+      document.getElementById("formHint").textContent = "! required fields missing";
+      return;
+    }
+    var chain = document.getElementById("fChain").value === "robinhood" ? "robinhood" : "other";
+    var row = document.createElement("div");
+    row.className = "g-grid g-row mono";
+    row.innerHTML = "<span>" + name.toUpperCase() + "</span><span>" + chain + "</span>" +
+      "<span>just now</span><span class='badge amber'>QUEUED</span>";
+    document.getElementById("queueList").insertBefore(row, document.getElementById("queueList").firstChild);
+    document.getElementById("queueNote").textContent = "> proposal queued for signature review \u2014 ballot opens next round.";
+    window.VTToast("proposal " + (sym || name).toUpperCase() + " queued for review.", "ok");
+    form.reset();
+  });
+})();
+</script>
+</body>
+</html>

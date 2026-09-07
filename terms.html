@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>terms :: vote.terminal</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23030704'/%3E%3Cpath d='M1 2h14v9H1zM1 11h14v1H1zM10 12h2v2H4v-2h2' fill='%2335f075'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="boot" class="boot"><pre id="bootText" class="boot-text"></pre></div>
+
+<header class="header">
+  <div class="header-left">
+    <span class="hl-bold">vote.terminal</span>
+    <span class="hl-dim">v2.6.1</span>
+    <span class="hl-sep">╱</span>
+    <a href="adbasddvtaytvwed.php" class="hl-link">[ballot]</a>
+    <a href="adbasddvtaytvwed.php#feed" class="hl-link">[log]</a>
+    <a href="adbasddvtaytvwed.php#info" class="hl-link">[about]</a>
+  </div>
+  <div class="header-right">
+    <span class="hl-dim">net:</span><span class="hl-ok">robinhood.chain</span>
+    <span class="hl-sep">│</span>
+    <span class="hl-dim">tty:</span><span class="mono" id="clock">00:00:00</span>
+    <span class="hl-sep">│</span>
+    <span class="hl-ok">ballot: open</span>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>&gt;&gt; man terms</span> <b>▮▮▮</b>
+    <span>effective: 2026-09-08</span> <b>▮▮▮</b>
+    <span>governed: robinhood.chain</span> <b>▮▮▮</b>
+    <span>&gt;&gt; man terms</span> <b>▮▮▮</b>
+    <span>effective: 2026-09-08</span> <b>▮▮▮</b>
+    <span>governed: robinhood.chain</span> <b>▮▮▮</b>
+  </div>
+</div>
+
+<main>
+  <section class="screen">
+    <div class="screen-title">
+      <span class="mono">CAT terms.md</span>
+      <span class="mono hl-dim">terms of use v1.0</span>
+    </div>
+    <div class="screen-body legal">
+      <p class="updated">&gt; effective 2026-09-08</p>
+
+      <h2>1. The service</h2>
+      <p>vote.terminal provides a pseudonymous community ballot for candidate token listings. It is a neutral conduit: it takes no custody of assets, holds no funds, and cannot reverse transactions submitted through your wallet.</p>
+
+      <h2>2. Eligibility</h2>
+      <p>You must be of legal age in your jurisdiction and permitted to use blockchain software there. If you are denied such use by law, you may not access the service.</p>
+
+      <h2>3. Wallet & votes</h2>
+      <ul>
+        <li>You are responsible for the wallet you connect and for keeping its credentials secret.</li>
+        <li>One address may cast one ballot per round. Votes are final and cannot be changed or withdrawn once the round closes.</li>
+        <li>We reserve the right to reject ballots that appear coerced, automated, or in violation of these terms.</li>
+      </ul>
+
+      <h2>4. Proposals</h2>
+      <p>You warrant that any token you submit for review is not a fraudulent, phishing, or misleading scheme, and that you hold the authority to represent it. Proposals may be removed from review without notice.</p>
+
+      <h2>5. No custody, no advice</h2>
+      <p>Nothing on the service is an offer, solicitation, or recommendation. A listing outcome is community opinion, not a promise of value, liquidity, or legal compliance.</p>
+
+      <h2>6. Acceptable use</h2>
+      <p>Do not attempt to double-vote, fabricate ballots, reverse-engineer the tally, spam the feed, or attack the service. Violations may result in your address being barred from future rounds.</p>
+
+      <h2>7. Limitation of liability</h2>
+      <p>To the maximum extent permitted by law, vote.terminal and its maintainers are not liable for any loss arising from use of the service, including lost, delayed, or mis-signed transactions, or reliance on voting outputs.</p>
+
+      <h2>8. Disclaimer of warranties</h2>
+      <p>The service is provided "as is" and "as available", without warranties of any kind, express or implied, including availability, uninterrupted operation, or fitness for a particular purpose.</p>
+
+      <h2>9. Governing law</h2>
+      <p>These terms are executable agreements you accept by connecting a wallet and casting a ballot. They are governed by the rules of the public chain used for signatures.</p>
+
+      <h2>10. Changes</h2>
+      <p>We may update these terms. Continued use after a revision tag is posted constitutes acceptance of the revised terms.</p>
+    </div>
+  </section>
+
+  <div class="page-footer" data-page="terms"></div>
+</main>
+
+<div class="toast-wrap" id="toastWrap"></div>
+<script src="footer.js"></script>
+<script src="shared.js"></script>
+</body>
+</html>
